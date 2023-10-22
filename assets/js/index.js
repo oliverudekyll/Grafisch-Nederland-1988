@@ -21,7 +21,7 @@ var prefaceHeader = document.getElementById("preface-header");
 window.addEventListener("scroll", function() {
   var distanceFromTop = prefaceHeader.getBoundingClientRect().top;
   var distanceFromBottom = prefaceHeader.getBoundingClientRect().bottom;
-  var scrollThreshold = 190; // Change this threshold as needed
+  var scrollThreshold = 190;
 
   if (distanceFromBottom <= scrollThreshold) {
     prefaceHeader.style.opacity = "0";
@@ -85,7 +85,7 @@ var navOverlay = document.getElementById("nav-overlay");
 var popupToggle = function() {
   var navContainerRect = navContainer.getBoundingClientRect();
 
-  if (navContainerRect.top <= 0) {
+  if (navContainerRect.top <= 72) {
     setTimeout(function() {
       navOverlay.style.opacity = "0";
     }, 0);
