@@ -79,12 +79,15 @@ soundButton.addEventListener("click", function(){
 })
 
 var navPopup = document.getElementById("navPopup");
-var popupToggle = function() {
-  var tts2Rect = tts2.getBoundingClientRect();
+var navContainer = document.getElementById("nav-container");
 
-  if (tts2Rect.top <= 0) {
+var popupToggle = function() {
+  var navContainerRect = navContainer.getBoundingClientRect();
+
+  if (navContainerRect.top <= 0) {
     setTimeout(function() {
       navPopup.classList.add("active");
+      navContainer.style.backgroundColor = "hsl(200, 80%, 90%)";
     }, 0);
   }
 };

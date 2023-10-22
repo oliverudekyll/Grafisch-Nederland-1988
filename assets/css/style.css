@@ -1,6 +1,9 @@
 :root {
   --vh: calc(100vh - 2rem);
   --vw: calc(100vw - 2rem);
+
+  --vh8: calc(100vh - 8rem);
+  --vw8: calc(100vw - 8rem);
 }
 
 body {
@@ -871,7 +874,7 @@ q {
   .navigation_background {
     position: absolute;
     height: calc(100vh - 8rem);
-    width: calc(200vw - 8rem);
+    width: calc(200vw - 16rem);
     top: 0;
     left: 0;
 
@@ -881,6 +884,16 @@ q {
   .nav1, .nav2 {
     height: calc(100vh - 8rem);
     width: calc(100vw - 8rem);
+
+    display: grid;
+    grid-template-columns: repeat(12, calc(calc(100vw - 8rem) / 12));
+    grid-template-rows: repeat(12, calc(calc(100vh - 8rem) / 12));
+  }
+
+  #nav-container {
+    background-color: #000;
+
+    transition: background-color 1s ease-in-out;
   }
   
   
