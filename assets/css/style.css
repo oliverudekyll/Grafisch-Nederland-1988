@@ -10,6 +10,7 @@ body {
   font-family: "Arial Black", Arial, Helvetica, sans-serif;
   font-size: 0.875rem;
   font-style: normal;
+  font-weight: bolder;
   line-height: 175%;
   letter-spacing: -0.0525em;
 }
@@ -36,6 +37,31 @@ section::-webkit-scrollbar {
 
 .algo2-tts1::-webkit-scrollbar {
   display: none;
+}
+
+#directions {
+  position: fixed;
+  height: 2rem;
+  width: 2rem;
+  bottom: 1rem;
+  left: 50%;
+  transform: translate(-50%);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  font-family: "Times New Roman", Times, serif;
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.6875rem;
+  -webkit-text-stroke: .11rem;
+
+  mix-blend-mode: difference;
+  color: hsl(0, 0%, 100%);
+
+  z-index: 999;
 }
 
 div#pixels-container {
@@ -247,6 +273,7 @@ q {
 
     display: flex;
     align-items: center;
+    overflow-y: auto;
   }
 
 /* SEARCH ALGORITHMS */
@@ -323,6 +350,18 @@ q {
 
     z-index: 20;
   }
+
+  p.black-text {
+    position: sticky;
+    height: min-content;
+    left: 1rem;
+    top: 1rem;
+    padding-bottom: 2rem;
+    padding-right: 2rem;
+
+    color: black;
+
+    z-index: 200;  }
 
   .narrow {
     width: calc(100vw / 6);
@@ -751,6 +790,8 @@ q {
   }
 
   .navigation_popup {
+    width: 25vw;
+    height: 25vh;
     position: absolute;
     padding: 2rem;
 
@@ -955,5 +996,61 @@ q {
     background: linear-gradient(180deg, #999 0%, #000 100%);
     border: #000 1px solid;
   }
+
+  .directions-window {
+    grid-column: 3/8;
+    grid-row: 4/10;
+    padding: 2rem;
+    margin: 2rem;
+
+    display: flex;
+    flex-flow: column;
+    justify-content: flex-start;
+    gap: 1rem;
+
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.25rem;
+    color: rgb(255, 128, 0);
+
+    border-radius: 4rem;
+    border: 1px black solid;
+    background-color: rgba(255, 255, 255, .9);
+    box-shadow: 2px 7px 12px rgba(0, 0, 0, .4);
+    z-index: 100;
+    overflow: auto;
+  }
+  
+
+  iframe.window2 {
+    height: calc(100% - 4rem);
+    width: calc(100% - 4rem);
+    grid-column: 5/10;
+    grid-row: 4/10;
+    margin: 2rem;
+
+    color: rgb(255, 128, 0);
+
+    border-radius: 4rem;
+    border: 1px black solid;
+    background-color: rgba(255, 255, 255, .9);
+    box-shadow: 2px 7px 12px rgba(0, 0, 0, .4);
+    z-index: 100;
+  }
+
+  .black-bars {
+    grid-column: 11/13;
+    grid-row: span 12;
+
+    background: linear-gradient(90deg, 
+    #999 0%, 
+    #000 35%, 
+    #333 50%,
+    #999 50.1%, 
+    #000 85%, 
+    #333 100%
+    );  
+  }
+
+  
   
   

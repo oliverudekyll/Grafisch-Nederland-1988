@@ -115,8 +115,6 @@ closeButton.forEach(button => {
 
 
 
-
-
 var keyUp = document.getElementById("key-up");
 var keyLeft = document.getElementById("key-left");
 var keyDown = document.getElementById("key-down");
@@ -149,3 +147,43 @@ document.addEventListener("keyup", function(event) {
   if (event.key === 'ArrowRight') {
     keyRight.classList.remove('lit');}
 })
+
+
+
+
+var directionsContainer = document.getElementById("directions");
+var tabPreface = document.getElementById("tab-preface");
+var tabAlgo1 = document.getElementById("tab-algo1");
+var tabAlgo2 = document.getElementById("tab-algo2");
+var tabTTS1 = document.getElementById("tab-tts1");
+var tabTTS2 = document.getElementById("tab-tts2");
+
+function isElementInViewport(el) {
+  var rect = el.getBoundingClientRect();
+
+  return (
+      rect.top >= 0 &&
+      rect.left >= 0 &&
+      rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+      rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+  );
+}
+
+var checkElements = function() {
+  if (isElementInViewport(tabPreface) ||
+  isElementInViewport(tabAlgo2) ||
+  isElementInViewport(tabTTS1) ||
+  isElementInViewport(tabTTS2)
+  ) {
+    directionsContainer.innerHTML = "&#8595;";
+  }
+
+  else {
+    directionsContainer.innerHTML = "&#8594;";
+  }
+}
+
+document.addEventListener("DOMContentLoaded", checkElements);
+window.addEventListener("scroll", checkElements);
+algorithms.addEventListener("scroll", checkElements);
+algoTTS.addEventListener("scroll", checkElements);
