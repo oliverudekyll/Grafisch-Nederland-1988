@@ -80,15 +80,18 @@ soundButton.addEventListener("click", function(){
 
 var navPopup = document.getElementById("navPopup");
 var navContainer = document.getElementById("nav-container");
+var navOverlay = document.getElementById("nav-overlay");
 
 var popupToggle = function() {
   var navContainerRect = navContainer.getBoundingClientRect();
 
   if (navContainerRect.top <= 0) {
     setTimeout(function() {
-      navPopup.classList.add("active");
-      navContainer.style.backgroundColor = "hsl(200, 80%, 90%)";
+      navOverlay.style.opacity = "0";
     }, 0);
+  }
+  else {
+    navOverlay.style.opacity = "1";
   }
 };
 
