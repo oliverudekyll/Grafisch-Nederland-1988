@@ -351,6 +351,11 @@ q {
     z-index: 20;
   }
 
+  p.text a {
+    text-decoration: underline;
+    color: white;
+  }
+
   p.black-text {
     position: sticky;
     height: min-content;
